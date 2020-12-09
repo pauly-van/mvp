@@ -1,0 +1,34 @@
+{
+  "name": "rpt25-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-webpack-plugin": "^0.1.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pauly-van/rpt25-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pauly-van/rpt25-mvp/issues"
+  },
+  "homepage": "https://github.com/pauly-van/rpt25-mvp#readme"
+}
