@@ -17,28 +17,20 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
-
+  Steam User Activity
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  PC gaming community, stalking data of your fellow Steam gamers
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+  The application will save a users video game data to persistent storage from Steam client's API. It will display your favorite streamers, competitve players, and video game developer's activity! Think of this as your favorites list of a user's video game history. Check to see if they are playing your favorite games, or catch them playing releases that appeal to you! The data will be neatly displayed on a webpage with the viewer able to look at recent activity, last login, most played genre, etc. 
 ## Problem ##
-  > Describe the problem your product solves.
-
+  The one thing that is consistent with gamers is that there is never enough games. In the world of gaming, sometimes you want to follow gamers and see what games they are playing and how they are ranking. The issue is sprung when you want to be kept up to date with multiple people without having to navigate through mulitple user profiles.
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
-
+  Steam user activity pulls all your favorite players activity into one easy to navigate metric page. Follow the latest trends of your friends or popular players. Keep up with newest releases, and follow players that are part of your favorites list. Set or retrieve a user's stats, achievements or leaderboard scores
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
-
+  "Get the player metrics you need at Steam User Activity"
 ## How to Get Started ##
-  > Describe how easy it is to get started.
-
+  All you need to do is enter a steam users handle and it will keep tabs on your user everytime you refresh!
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  "Steam User Activity is fabulous! I have all my favorite streamers activity all in one place!"
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
