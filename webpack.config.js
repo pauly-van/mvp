@@ -2,14 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');  
   
 module.exports = {  
-   entry: './main.js',  
+   entry: './client/index.jsx',  
    output: {  
       path: path.join(__dirname, '/client/bundle'),  
       filename: 'index_bundle.js'  
-   },  
-   devServer: {  
-      inline: true,  
-      port: 3000
    },  
    module: {  
       rules: [  
@@ -18,13 +14,16 @@ module.exports = {
             exclude: /node_modules/,  
         use: {  
               loader: "babel-loader",  
+              options: {
+               presets: ['react']
+             }
             }  
          }  
       ]  
    },  
    plugins:[  
       new HtmlWebpackPlugin({  
-         template: './index.html'  
+         template: './client/index.html'  
       })  
    ]  
 }  

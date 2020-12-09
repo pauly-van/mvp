@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class App extends React.Component{
     constructor(props){
@@ -8,7 +9,8 @@ class App extends React.Component{
         }
     }
     render(){
-        return(<div>
+        return (
+        <div>
           <h1>Steam User Activity</h1>
           <UserList></UserList>
           <AddUser></AddUser>
