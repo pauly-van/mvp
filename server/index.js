@@ -12,9 +12,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/refresh', (req, res)=>{
   db.retrieveFromMongo((game)=>{
-    console.log(game);
+    res.status(200).send(game);
   })
 });
+
+app.get('/gameList', (req, res)=>{
+  axios({
+    method: 'GET',
+    url: 'http://api.steampowered.com/ISteamApps/GetAppList/v0002/'
+  })
+  .then((data)=>{
+    res.send(data.data.applist.apps);
+  })
+})
 
 app.post('/', (req, res)=>{
   let id = Object.keys(req.body);
@@ -28,6 +38,7 @@ app.post('/', (req, res)=>{
   .catch((err)=>{
     console.log(err)
   })
+  res.status(200).end();
 });
 
 app.listen(port, ()=>console.log('Server is listening on port '+port));
