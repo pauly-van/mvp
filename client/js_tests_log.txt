@@ -1,0 +1,144 @@
+[2020-12-11T15:12:33-08:00] TEST                 : discoverServerUnderTest.js
+[2020-12-11T15:12:33-08:00] DESCRIPTION          : Perform DIAL discovery and ensure that the server under test is discovered
+[2020-12-11T15:12:33-08:00] DEBUG                : Performing discovery ..
+[2020-12-11T15:12:38-08:00] DEBUG                : Found 192.168.1.27 in discovered list of servers
+[2020-12-11T15:12:38-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:12:38-08:00] TEST                 : launchApplicationWithInvalidCors.js
+[2020-12-11T15:12:38-08:00] DESCRIPTION          : Launch an application from an invalid Origin and check for response code 403
+[2020-12-11T15:12:38-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:12:38-08:00] TEST                 : launchApplicationWithValidCors.js
+[2020-12-11T15:12:38-08:00] DESCRIPTION          : Launch an application that is not recognized by DIAL server and check for response code 404
+[2020-12-11T15:12:40-08:00] RESULT               : TEST FAILED Error: Tried to launch application from Origin: https://www.youtube.com. Expected statusCode: 201 but got 200
+
+[2020-12-11T15:12:40-08:00] TEST                 : launchApplicationNotRecognized.js
+[2020-12-11T15:12:40-08:00] DESCRIPTION          : Launch an application that is not recognized by DIAL server and check for response code 404
+[2020-12-11T15:12:40-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:12:40-08:00] TEST                 : launchApplicationInRunningStateWithNoPayload.js
+[2020-12-11T15:12:40-08:00] DESCRIPTION          : Launch YouTube without payload using DIAL server when application is already running and check for response code 200
+[2020-12-11T15:12:40-08:00] DEBUG                : Querying application state
+[2020-12-11T15:12:40-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:12:40-08:00] DEBUG                : Launching application ..
+[2020-12-11T15:12:41-08:00] DEBUG                : Querying application state
+[2020-12-11T15:12:41-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:12:41-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:12:41-08:00] TEST                 : launchApplicationInRunningStateWithPayload.js
+[2020-12-11T15:12:41-08:00] DESCRIPTION          : Launch YouTube with payload using DIAL server when application is already running and check for response code 200
+[2020-12-11T15:12:41-08:00] DEBUG                : Querying application state
+[2020-12-11T15:12:41-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:12:41-08:00] DEBUG                : Launching application with payload..
+[2020-12-11T15:12:42-08:00] DEBUG                : Querying application state
+[2020-12-11T15:12:42-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:12:42-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:12:42-08:00] TEST                 : launchApplicationInStoppedStateWithNoPayload.js
+[2020-12-11T15:12:42-08:00] DESCRIPTION          : Launch YouTube application using DIAL server when the application is in STOPPED state and expect response code 201
+[2020-12-11T15:12:42-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:12:42-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:12:42-08:00] DEBUG                : Stopping application ..
+[2020-12-11T15:12:43-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:12:51-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:12:51-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:12:51-08:00] DEBUG                : Launching application ..
+[2020-12-11T15:12:53-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:13:01-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:01-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:01-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:13:01-08:00] TEST                 : launchApplicationInStoppedStateWithPayload.js
+[2020-12-11T15:13:01-08:00] DESCRIPTION          : Launch YouTube application with payload using DIAL server when the application is in STOPPED state and expect response code 201
+[2020-12-11T15:13:01-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:01-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:01-08:00] DEBUG                : Stopping application ..
+[2020-12-11T15:13:02-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:13:10-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:10-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:13:10-08:00] DEBUG                : Launching application with payload..
+[2020-12-11T15:13:13-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:13:21-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:21-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:21-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:13:21-08:00] TEST                 : launchApplicationInHiddenStateWithNoPayload.js
+[2020-12-11T15:13:21-08:00] DESCRIPTION          : Launch YouTube application using DIAL server when app is in hidden state and check for response code 201 
+[2020-12-11T15:13:21-08:00] DEBUG                : Querying application status ..
+[2020-12-11T15:13:21-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:21-08:00] DEBUG                : Hiding application ..
+[2020-12-11T15:13:21-08:00] RESULT               : TEST FAILED HIDE request returned 501 NOT IMPLEMENTED. This means the DIAL server does not support HIDE for this application.
+
+[2020-12-11T15:13:21-08:00] TEST                 : launchApplicationInHiddenStateWithPayload.js
+[2020-12-11T15:13:21-08:00] DESCRIPTION          : Launch YouTube application with payload using DIAL server when app is in hidden state and check for response code 201 
+[2020-12-11T15:13:21-08:00] DEBUG                : Querying application status ..
+[2020-12-11T15:13:21-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:21-08:00] DEBUG                : Hiding application ..
+[2020-12-11T15:13:21-08:00] RESULT               : TEST FAILED HIDE request returned 501 NOT IMPLEMENTED. This means the DIAL server does not support HIDE for this application.
+
+[2020-12-11T15:13:21-08:00] TEST                 : launchApplicationWithExcessPayload.js
+[2020-12-11T15:13:21-08:00] DESCRIPTION          : Try to launch YouTube application with excess payload and ensure DIAL server returns response code 413
+[2020-12-11T15:13:21-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:13:21-08:00] TEST                 : stopInvalidApplicationInstance.js
+[2020-12-11T15:13:21-08:00] DESCRIPTION          : Try to stop invalid YouTube application instance and check for DIAL server response code 404
+[2020-12-11T15:13:38-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:13:38-08:00] TEST                 : stopApplicationInRunningState.js
+[2020-12-11T15:13:38-08:00] DESCRIPTION          : Stop YouTube application when it is running and check for response code 200 from DIAL server 
+[2020-12-11T15:13:38-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:38-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:38-08:00] DEBUG                : Stopping application ..
+[2020-12-11T15:13:39-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:13:47-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:47-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:13:47-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:13:47-08:00] TEST                 : stopApplicationInStoppedState.js
+[2020-12-11T15:13:47-08:00] DESCRIPTION          : Try to stop YouTube application using DIAL server when the application is already stopped and expect response code 404.
+[2020-12-11T15:13:47-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:47-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:13:47-08:00] DEBUG                : Launching application ..
+[2020-12-11T15:13:49-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:13:57-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:13:57-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:13:57-08:00] DEBUG                : Stopping application ..
+[2020-12-11T15:13:58-08:00] DEBUG                : Wait for 8000 ms for state change to happen
+[2020-12-11T15:14:06-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:06-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:14:06-08:00] DEBUG                : Stopping application ..
+[2020-12-11T15:14:06-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:06-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:14:06-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:14:06-08:00] TEST                 : stopApplicationInHiddenState.js
+[2020-12-11T15:14:06-08:00] DESCRIPTION          : Stop YouTube application using DIAL server when the application is in hidden state and expect response code 200
+[2020-12-11T15:14:06-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:06-08:00] DEBUG                : Application is in stopped state
+[2020-12-11T15:14:06-08:00] DEBUG                : Launching application ..
+[2020-12-11T15:14:09-08:00] DEBUG                : Wait for 8000 ms for state change
+[2020-12-11T15:14:17-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:17-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:14:17-08:00] DEBUG                : Hiding application ..
+[2020-12-11T15:14:17-08:00] RESULT               : TEST FAILED HIDE request returned 501 NOT IMPLEMENTED. This means the DIAL server does not support HIDE for this application.
+
+[2020-12-11T15:14:17-08:00] TEST                 : hideInvalidApplicationInstance.js
+[2020-12-11T15:14:17-08:00] DESCRIPTION          : Try to hide an invalid instance of YouTube application and expect status code 404
+[2020-12-11T15:14:17-08:00] DEBUG                : Querying application state
+[2020-12-11T15:14:17-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:14:17-08:00] RESULT               : TEST PASSED
+
+[2020-12-11T15:14:17-08:00] TEST                 : hideApplicationInHiddenState.js
+[2020-12-11T15:14:17-08:00] DESCRIPTION          : Try to hide YouTube when it is already in hidden state and expect response code 200 from the DIAL server
+[2020-12-11T15:14:17-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:17-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:14:17-08:00] DEBUG                : Hiding application ..
+[2020-12-11T15:14:17-08:00] RESULT               : TEST FAILED HIDE request returned 501 NOT IMPLEMENTED. This means the DIAL server does not support HIDE for this application.
+
+[2020-12-11T15:14:17-08:00] TEST                 : hideApplicationInRunningState.js
+[2020-12-11T15:14:17-08:00] DESCRIPTION          : Hide YouTube application when it is running and expect response code 200
+[2020-12-11T15:14:17-08:00] DEBUG                : Querying application state ..
+[2020-12-11T15:14:17-08:00] DEBUG                : Application is in running state
+[2020-12-11T15:14:17-08:00] DEBUG                : Hiding application ..
+[2020-12-11T15:14:17-08:00] RESULT               : TEST FAILED HIDE request returned 501 NOT IMPLEMENTED. This means the DIAL server does not support HIDE for this application.
+
