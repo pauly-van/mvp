@@ -9,6 +9,7 @@ const db = require('../database');
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 app.get('/refresh', (req, res)=>{
   let gameIDs = [];
@@ -16,14 +17,20 @@ app.get('/refresh', (req, res)=>{
     game.forEach(g=>{
       gameIDs.push(g.appId);
     })
+    let = newGames = [];
     for(let i = 0; i<gameIDs.length;i++){
       axios({
         method: 'GET',
         url: `${steamData.steamUrl}?appid=${gameIDs[i]}&count=1`
       })
       .then((res)=>{
-        //delete database
-        db.saveToMongo(res);
+        newGames.push(res);
+        db.deleteDataFromMongo(()=>{
+          console.log('Delete successful!');
+        });
+        newGames.forEach((title)=>{
+          db.saveToMongo(title);
+        })
       })
       .catch((err)=>{
         if(err){console.log(err)};
@@ -59,5 +66,10 @@ app.post('/', (req, res)=>{
   })
   res.status(200).end();
 });
+
+app.post('/deleteItem', (req, res)=>{
+  console.log(req.body);
+  // db.deleteDataFromMongo({appId: });
+})
 
 app.listen(port, ()=>console.log('Server is listening on port '+port));
